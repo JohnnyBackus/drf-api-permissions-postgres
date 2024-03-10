@@ -1,40 +1,43 @@
 
-# LAB - Class xx
+# LAB - Class 32
 
-## Project: Project Name Here
+## Project: Permissions & Postgresql
 
-### Author: Student/Group Name
+### Author: Johnny Backus
 
 ### Links and Resources
 
-- [Back-end Server URL] # Fill in when applicable
-- [Front-end Application URL] # Fill in when applicable
 - [CodeFellows Python Lab Instructions](https://codefellows.github.io/code-401-python-guide/reference/submission-instructions/labs/)
 - [CodeFellows README template](https://codefellows.github.io/code-401-python-guide/reference/submission-instructions/labs/README-template.html)
 - lecture demo code used for reference
-- [ChatGPT chat]() # Fill in when applicable
-- GitHub CoPilot used for... #Fill in when applicable
+- GitHub CoPilot chat feature used to uncover error caused by modifying model after making migtations
 
 ### Setup
-- Create a `.env` file with the following requirements:
-  - PORT - Port Number
-  - DATABASE_URL - URL to the running Postgres instance/db
-- OR *.env requirements: n/a*
+
+- *.env requirements: n/a*
+- must have Docker
 
 ### How to Initialize/Run Your Application
 
-- Install requirements.txt
-- Example: Enter CLI command "python manage.py runserver"
+- Enter CLI command `docker compose build`
+- Enter CLI command `docker compose up`
+- View content in local port indicated in terminal
+- path to booklist is /api/v1/books/
 
 ### How to Use Your Library
-- Provide instructions here if applicable
+
+- n/a
 
 ### Tests
+
 #### How to Run Tests
-- Describe how to run tests
+
+- run CLI command `Docker compose exec web python manage.py test`
 
 #### Tests of Note
-- Any noteworthy information about the tests
+
+- Tests for CRUD; followed format provided by demo.
 
 #### Incomplete Tests
-- Describe any tests that were not completed or skipped
+
+- unable to pass CRUD tests; failure likely related to permissions
