@@ -37,7 +37,8 @@
 #### Tests of Note
 
 - Tests for CRUD; followed format provided by demo.
+- Test for unauthorized user.
 
 #### Incomplete Tests
 
-- unable to pass CRUD tests; failure likely related to permissions
+- n/a; all tests passed.

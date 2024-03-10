@@ -24,6 +24,9 @@ class BookTests(APITestCase):
         )
         test_book.save()
 
+    def setUp(self):
+        self.client.login(username="testuser1", password="pass")
+
     def test_books_model(self):
         book = Book.objects.get(id=1)
         actual_owner = str(book.owner)
@@ -79,3 +82,9 @@ class BookTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         books = Book.objects.all()
         self.assertEqual(len(books), 0)
+
+    def test_authentication_required(self):
+        self.client.logout()
+        url = reverse("book_list")
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
